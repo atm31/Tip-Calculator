@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --select-border: rgb(168, 168, 168);
+  --select-focus: rgb(255, 102, 46);
+  --select-arrow: var(--select-border);
+  --select-color: #4b4f50;
+}
+
+body {
+  background: #54cbe9;
+  background: linear-gradient(315deg, rgba(9,95,121,1) 0%, rgba(84,203,233,1) 75%);
+  font-family: "Roboto", sans-serif !important;
+  color:var(--select-color);
+}
+h1 {
+  margin-top: 0px;
+}
+
+.calc-shell {
+  width: 100vw;
+	height: 100vh;
+	background: #54cbe9;
+  background: linear-gradient(315deg, rgba(9,95,121,1) 0%, rgba(84,203,233,1) 75%);
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calc-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 1vw;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 16px 1px #00000030;
+  border-top: 10px solid rgb(255, 102, 46);
+}
+
+.label-text {
+  margin-bottom: 5px;
+}
+
+.input-area {
+  margin: 0px 0px 20px 0px;
+  padding: 5px;
+  border: 1px solid var(--select-border);
+}
+.input-area:focus {
+  border: 1px solid var(--select-focus);
+  /* box-shadow: 0 0 1px 2px rgba(59, 191, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring; */
+  /* color: #222;  */
+  outline: none;
+}
+
+
+.select-area {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--select-border);
+  border-radius: 0;
+  padding: 0.5em 0.5em;
+  margin: 0 0 20px 0;
+  width: 100%;
+  min-width: 15ch;
+  /* max-width: 30ch; */
+  font-family: "Roboto", sans-serif !important;
+  font-family: inherit;
+  font-size: 1rem;
+  color:var(--select-color);
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  outline: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234b4f50%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+	  linear-gradient(to bottom, #ffffff 0%,#ffffff 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+
+  
+
+.calc-button {
+  margin-top: 15px;
+  font-size: 1.25rem;
+  padding: 15px 20px;
+  border: none;
+  color: white;
+  background-color:rgb(255, 102, 46);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  
+}
+
+.calc-button:hover {
+  background-color: coral;
+}
+.calc-button:focus {
+  outline: #54cbe9 auto 1px;
+}
+
+
+
+
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+ 
+  <body>
+    
+    <div class="calc-shell">
+      <div class="calc-container">
+        <h1>Tip Calculator</h1>    
+        <label for="bill-input" class="label-text">Enter Your Bill Total:</label>
+        <input id="bill-input" class="input-area">
+
+        <label for="percent-select" class="label-text">Choose a percent:</label>
+        
+        <select name="percents" id="percent-selected" class="select-area">
+            <option value="">Please choose a percentage</option>
+            <option value=".05">5%</option>
+            <option value=".10">10%</option>
+            <option value=".15">15%</option>
+            <option value=".20">20%</option>
+        </select>
+       
+        <label for="people-input" class="label-text">Sharing your bill? Enter the number of people:</label>
+        <input type="number" min="1" id="people-input" class="input-area">
+
+        <button id="calc-button" class="calc-button">Calculate</button>
+
+        <div id="results-container">
+
+        </div>
+
+      </div>
+    </div>
+    
+    <script>
+          
+          
+          
+          
+            
+ 
+ 
+      function calculateTip() {
+        let percentSelected = document.getElementById('percent-selected');
+        //let percentResult = percentSelected.options[percentSelected.selectedIndex].value;
+        let percentResult = percentSelected.value;
+
+        let totalBill = billInput.value;
+        
+        let totalPeople = peopleInput.value;
+          
+        // if (peopleInput.value === '' || peopleInput.value === 0) {
+
+        // } else {
+
+        // }
+        
+        //let tipSuggestion = totalBill * percentResult;
+
+
+
+        let tipSuggestion = (totalBill * percentResult) / totalPeople;
+        
+         
+        if (percentResult === '' && totalBill === '') {
+          displayError('Error! Please enter a bill total and choose a percent.');
+        }else if (percentResult === '') {
+          displayError('Error! Please choose a percent.');
+        }else if (totalBill === '') {
+          displayError('Error! Please enter a bill total.');
+        }else {
+          displayTip(tipSuggestion);
+        }
+   
+        //multiply the billInput value with the percentage chosen value
+        //return value is what is used in the displayTip function
+      }
+
+      function displayError(errorText){
+            resultsContainer.innerHTML = '';
+           
+        let newParagraph = document.createElement('p');
+        newParagraph.innerText = errorText;
+            resultsContainer.appendChild(newParagraph);
+
+      }
+
+      function displayTip(results){
+            resultsContainer.innerHTML = '';
+
+        let newParagraph = document.createElement('p');
+            newParagraph.innerText = "Your suggested tip is " + "$" + results;
+            resultsContainer.appendChild(newParagraph);
+      }
+      let resultsContainer = document.getElementById('results-container');
+      let calcButton = document.getElementById('calc-button');
+      let peopleInput = document.getElementById('people-input');
+      let billInput = document.getElementById('bill-input');
+      calcButton.addEventListener('click', calculateTip);
+      
+    </script>
+  </body>
+</html>
+
+
+<!-- JS Tip Calculator
+
+Bill amount
+
+Tip %
+
+number of people sharing bill
+
+button that returns value
+
+
+
+[ ] Need a way to Input bill amount  <input id=“”>
+
+[ ] Need a way to check if bill amount is empty or 0 and give error message - prompt() for error and if statement using (variable !== null && variable !== '')
+
+[ ] Need a way to Choose a percentage
+
+[ ] Check percentage and use value in math
+
+[ ] Need a way to Input number of people  <input id=“”>
+
+[ ] Must be a number greater than 0 or error - same error prompt as bill amount?
+
+[ ] Need to divide by people
+
+
+[ ] Need a button to initiate calculation - create variable for button   var toggleAllButton = document.getElementById('toggle-all-button');
+      toggleAllButton.addEventListener('click', toggleAll);
+
+
+[ ] Multiply bill amount by percentage
+
+
+[ ] Function needs to return and display Result - document.createElement(); -->
